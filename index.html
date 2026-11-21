@@ -903,29 +903,7 @@ tbody td{padding:13px 14px;font-size:0.82rem;color:var(--text);vertical-align:mi
       4. Cole aqui e clique em Conectar
     </div>
     <div style="background:rgba(91,143,212,0.07);border:1px solid rgba(91,143,212,0.2);border-radius:var(--r3);padding:12px;font-size:0.73rem;color:var(--text2);line-height:1.65;margin-bottom:18px;">
-      <strong style="color:var(--blue)">🗃️ SQL para criar a tabela</strong> — rode no <strong>SQL Editor</strong> do Supabase:<br>
-      <code style="display:block;margin-top:8px;background:var(--bg);padding:10px;border-radius:6px;font-size:0.7rem;white-space:pre-wrap;color:var(--green);line-height:1.5;">CREATE TABLE vendas (
-  id text PRIMARY KEY,
-  data_venda date,
-  cliente text,
-  localizador text,
-  liner text,
-  empreendimento text,
-  valor numeric,
-  entrada numeric DEFAULT 0,
-  forma_entrada text,
-  venc_entrada date,
-  forma_pagamento text,
-  parcelas_credito int DEFAULT 1,
-  boletos text DEFAULT '[]',
-  status text DEFAULT 'ativo',
-  nota text DEFAULT '',
-  created_at timestamptz DEFAULT now()
-);
-ALTER TABLE vendas ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "acesso autenticado" ON vendas
-  FOR ALL USING (auth.role() = 'authenticated');</code>
-      <div style="margin-top:10px;background:rgba(224,104,88,0.08);border:1px solid rgba(224,104,88,0.3);border-radius:6px;padding:10px;font-size:0.72rem;color:var(--red);line-height:1.6;">
+      
         <strong>⚠️ Segurança:</strong> Sem RLS, qualquer pessoa com a chave pode ver seus dados.
       </div>
     </div>
